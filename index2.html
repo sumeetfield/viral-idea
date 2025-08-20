@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePro - Premium Home Solutions</title>
+    <!-- Facebook Open Graph Meta Tags -->
+    <meta property="og:title" content="HomePro - Premium Home Solutions">
+    <meta property="og:description" content="Discover our premium home improvement products and services. Transform your living space with HomePro today!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80">
+    <meta property="og:url" content="https://www.myhomepro.in/homepro/home">
+    <meta property="og:type" content="website">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #7f8c8d;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4ca1af;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .btn:hover {
+            background: #2c3e50;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .feature-content {
+            padding: 20px;
+        }
+        
+        .feature-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .demo-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .demo-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .url-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            word-break: break-all;
+            border: 2px dashed #4ca1af;
+        }
+        
+        .info-box {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #1877f2;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: auto;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">🏠</span>
+                    <span>HomePro</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Transform Your Living Space</h1>
+            <p>HomePro offers premium home improvement solutions with over 15 years of experience. From renovation to interior design, we bring your vision to life.</p>
+            <a href="#" class="btn">Explore Our Services</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="feature-content">
+                    <h3>Home Renovation</h3>
+                    <p>Complete home transformation with quality materials and expert craftsmanship.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="feature-content">
+                    <h3>Interior Design</h3>
+                    <p>Create beautiful, functional spaces with our expert interior designers.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="feature-content">
+                    <h3>Kitchen Remodeling</h3>
+                    <p>Modernize your kitchen with our custom remodeling solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo-section">
+            <h2>Facebook Sharing Demo</h2>
+            <p>When you share this page on Facebook, it will show a preview with the content below:</p>
+            
+            <div class="url-box">https://www.myhomepro.in/homepro/home</div>
+            
+            <p>But when someone clicks the link from Facebook, they will be redirected to:</p>
+            
+            <div class="url-box">https://www.rajputsclub.com/</div>
+            
+            <div class="info-box">
+                <h3>Why isn't this working on GitHub Pages?</h3>
+                <p>GitHub Pages only supports static HTML, CSS, and JavaScript. To properly implement referer-based redirection, you need server-side code (PHP, Node.js, etc.) that can check the HTTP referer header before serving content.</p>
+                <p>The current implementation is a client-side simulation. For a production solution, you would need to host this on a platform that supports server-side processing.</p>
+            </div>
+            
+            <p style="margin-top: 20px; font-weight: bold;">Try sharing this URL on Facebook to see the preview!</p>
+            
+            <button class="btn" onclick="simulateRedirect()">Simulate Facebook Redirect</button>
+            
+            <div id="redirect-result" style="display: none; margin-top: 20px; padding: 15px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336;">
+                <p><strong>Facebook Referrer Detected!</strong> In a real implementation, you would be redirected to https://www.rajputsclub.com/</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="logo" style="justify-content: center;">
+                <span class="logo-icon">🏠</span>
+                <span>HomePro</span>
+            </div>
+            <p>Premium Home Solutions Since 2008</p>
+            <div class="social-links">
+                <a href="#">📱</a>
+                <a href="#">📘</a>
+                <a href="#">📸</a>
+                <a href="#">🐦</a>
+            </div>
+            <p>&copy; 2023 HomePro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Client-side simulation of referer-based redirection
+        // Note: In a real implementation, this should be done server-side
+        
+        function simulateRedirect() {
+            document.getElementById('redirect-result').style.display = 'block';
+            alert('Simulating redirect to https://www.rajputsclub.com/\n\nIn a real scenario, this would happen automatically when someone clicks from Facebook.');
+        }
+        
+        // Check if the page is being viewed in a Facebook context
+        // This is a simplified client-side check - server-side is more reliable
+        function checkReferrer() {
+            // Check if user is coming from Facebook
+            if (document.referrer.indexOf('facebook.com') > -1 || 
+                document.referrer.indexOf('fb.com') > -1) {
+                // In a real implementation, we would redirect here
+                console.log('Facebook referrer detected - would redirect to https://www.rajputsclub.com/');
+                
+                // Show a message for demonstration purposes
+                const demoSection = document.querySelector('.demo-section');
+                const resultDiv = document.getElementById('redirect-result');
+                resultDiv.style.display = 'block';
+            }
+        }
+        
+        // Run the check when page loads
+        window.onload = checkReferrer;
+    </script>
+</body>
+</html>
